@@ -1,0 +1,61 @@
+<section class="section" id="proyectos">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">{{ i18n.t('projects.kicker') }}</div>
+        <h2>{{ i18n.t('projects.heading') }}</h2>
+      </div>
+      <p class="section-desc">{{ i18n.t('projects.desc') }}</p>
+    </div>
+    <div class="grid projects">
+      @for (project of projects(); track project.title) {
+        <article class="card project-card">
+          <div class="project-art">
+            @switch (project.art) {
+              @case ('phone') {
+                <div class="art-phone">
+                  ♫<span>SentraVoz</span><span>◉ Llamada</span>
+                </div>
+              }
+              @case ('code') {
+                <div class="art-code">
+                  JSON → SEMANTIC<br />
+                  tokens: compact<br />
+                  access: partial<br />
+                  efficiency: ↑
+                </div>
+              }
+              @case ('dashboard') {
+                <div class="art-dashboard">
+                  <div class="dash-top"></div>
+                  <div class="bars">
+                    <i></i><i></i><i></i><i></i><i></i><i></i>
+                  </div>
+                </div>
+              }
+            }
+          </div>
+          <div class="project-title-row">
+            <h3>{{ project.title }}</h3>
+            <span class="tag">{{ project.tag }}</span>
+          </div>
+          <div class="project-subtitle">{{ project.subtitle }}</div>
+          <p class="project-copy">{{ project.copy }}</p>
+          <div class="chips">
+            @for (chip of project.chips; track chip) {
+              <span class="chip">{{ chip }}</span>
+            }
+          </div>
+          <div class="project-foot">
+            @for (item of project.foot; track item.label) {
+              <div>
+                <strong>{{ item.label }}</strong>
+                <span>{{ item.value }}</span>
+              </div>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

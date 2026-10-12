@@ -1,0 +1,19 @@
+<section class="section" id="sobre-mi">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">{{ i18n.t('principles.kicker') }}</div>
+        <h2>{{ i18n.t('principles.heading') }}</h2>
+      </div>
+    </div>
+    <div class="grid principles">
+      @for (principle of principles(); track principle.title) {
+        <article class="principle">
+          <div class="skill-icon">{{ principle.icon }}</div>
+          <h3>{{ principle.title }}</h3>
+          <p>{{ principle.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

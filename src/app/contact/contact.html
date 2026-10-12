@@ -1,0 +1,57 @@
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-details">
+        <div class="section-kicker">{{ i18n.t('contact.kicker') }}</div>
+        <h2>{{ i18n.t('contact.heading') }}</h2>
+        <p>{{ i18n.t('contact.desc') }}</p>
+        <a href="tel:+573014802687">▣　+57 301 480 2687</a>
+        <a href="mailto:johansmoralesp@gmail.com"
+          >✉　johansmoralesp@gmail.com</a
+        >
+        <a href="#inicio">⌖　Bogotá, Colombia</a>
+      </div>
+      <form
+        class="contact-form"
+        (ngSubmit)="onSubmit(contactForm)"
+        #contactForm="ngForm"
+      >
+        <input
+          name="name"
+          [placeholder]="i18n.t('contact.form.name')"
+          required
+          ngModel
+        >
+        <input
+          type="email"
+          name="email"
+          [placeholder]="i18n.t('contact.form.email')"
+          required
+          ngModel
+        >
+        <select name="subject" required ngModel>
+          <option value="" disabled selected>
+            {{ i18n.t('contact.form.subject') }}
+          </option>
+          @for (option of subjectOptions(); track option) {
+            <option>{{ option }}</option>
+          }
+        </select>
+        <textarea
+          name="message"
+          [placeholder]="i18n.t('contact.form.message')"
+          required
+          ngModel
+        ></textarea>
+        <button class="btn btn-primary" type="submit">
+          {{ i18n.t('contact.form.submit') }}
+        </button>
+        <div class="form-note">{{ formNote() }}</div>
+      </form>
+      <div class="quote-card">
+        <blockquote>“{{ i18n.t('contact.quote') }}”</blockquote>
+        <small>{{ i18n.t('contact.quote.author') }}</small>
+      </div>
+    </div>
+  </div>
+</section>

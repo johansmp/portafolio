@@ -1,0 +1,70 @@
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#inicio">
+      <span class="monogram">JM</span>
+      <span>Johan Morales</span>
+    </a>
+    <nav
+      class="navlinks"
+      id="navlinks"
+      [attr.aria-label]="i18n.t('a11y.nav')"
+      [class.open]="menuOpen()"
+    >
+      <a href="#inicio" (click)="closeMenu()">{{ i18n.t('nav.home') }}</a>
+      <a href="#proyectos" (click)="closeMenu()">{{ i18n.t('nav.projects') }}</a>
+      <a href="#experiencia" (click)="closeMenu()">{{ i18n.t('nav.experience') }}</a>
+      <a href="#ia" (click)="closeMenu()">{{ i18n.t('nav.ai') }}</a>
+      <a href="#sobre-mi" (click)="closeMenu()">{{ i18n.t('nav.about') }}</a>
+      <a href="#contacto" (click)="closeMenu()">{{ i18n.t('nav.contact') }}</a>
+    </nav>
+    <div class="navright">
+      <span class="social">
+        <a
+          href="https://github.com/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub"
+          >◉</a
+        >　<a
+          href="https://www.linkedin.com/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+          >in</a
+        >
+      </span>
+      <div
+        class="lang-switch"
+        role="group"
+        [attr.aria-label]="i18n.t('a11y.language')"
+      >
+        @for (loc of i18n.availableLocales; track loc.code) {
+          <button
+            type="button"
+            class="lang-btn"
+            [class.active]="i18n.currentLocale() === loc.code"
+            [attr.aria-pressed]="i18n.currentLocale() === loc.code"
+            (click)="setLocale(loc.code)"
+          >
+            <span class="lang-full">{{ loc.label }}</span>
+            <span class="lang-short">{{ loc.short }}</span>
+          </button>
+        }
+      </div>
+      <a class="btn btn-quiet" [href]="i18n.cvMailto()">
+        {{ i18n.t('nav.cv') }}
+      </a>
+      <button
+        class="mobile-menu"
+        type="button"
+        [attr.aria-label]="
+          menuOpen() ? i18n.t('a11y.close.menu') : i18n.t('a11y.open.menu')
+        "
+        [attr.aria-expanded]="menuOpen()"
+        (click)="toggleMenu()"
+      >
+        {{ menuOpen() ? '✕' : '☰' }}
+      </button>
+    </div>
+  </div>
+</header>

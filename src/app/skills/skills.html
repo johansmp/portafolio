@@ -1,0 +1,20 @@
+<section class="section" id="competencias">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">{{ i18n.t('skills.kicker') }}</div>
+        <h2>{{ i18n.t('skills.heading') }}</h2>
+      </div>
+      <p class="section-desc">{{ i18n.t('skills.desc') }}</p>
+    </div>
+    <div class="grid skills">
+      @for (skill of skills(); track skill.title) {
+        <article class="card">
+          <div class="skill-icon">{{ skill.icon }}</div>
+          <h3>{{ skill.title }}</h3>
+          <p>{{ skill.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

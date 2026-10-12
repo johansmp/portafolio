@@ -1,0 +1,62 @@
+<section class="container hero" id="inicio">
+  <div class="hero-copy">
+    <div class="eyebrow">{{ i18n.t('hero.eyebrow') }}</div>
+    <h1>
+      Johan Stiven<br />
+      Morales <span class="gradient-text">Pinzón</span>
+    </h1>
+    <p class="role">Senior Software Engineer</p>
+    <p class="intro">{{ i18n.t('hero.intro') }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#proyectos">
+        {{ i18n.t('hero.action.portfolio') }} <span>→</span>
+      </a>
+      <a class="btn btn-quiet" [href]="i18n.cvMailto()">
+        {{ i18n.t('hero.action.contact') }}
+      </a>
+    </div>
+    <div class="contactline">
+      <span>⌖ Bogotá, Colombia</span>
+      <span>☎ +57 301 480 2687</span>
+      <span>✉ johansmoralesp@gmail.com</span>
+      <span
+        ><a
+          href="https://www.linkedin.com/"
+          target="_blank"
+          rel="noreferrer"
+          >in LinkedIn</a
+        ></span
+      >
+      <span
+        ><a
+          href="https://github.com/"
+          target="_blank"
+          rel="noreferrer"
+          >◉ GitHub</a
+        ></span
+      >
+    </div>
+  </div>
+  <div class="hero-art" [attr.aria-label]="i18n.t('hero.art.label')">
+    <div class="orb"></div>
+    <div class="orb orb-2"></div>
+    <div class="frame"></div>
+    <div class="portrait">
+      <div class="portrait-inner">
+        <img
+          src="foto-perfil.png"
+          [alt]="i18n.t('hero.photo.alt')"
+          width="800"
+          height="800"
+        >
+      </div>
+    </div>
+    <div class="badge">
+      <span class="badge-dot" aria-hidden="true"></span>
+      {{ i18n.t('hero.badge') }}
+    </div>
+    <div class="floating-note">
+      {{ i18n.t('hero.note.a') }}<strong>+</strong>{{ i18n.t('hero.note.b') }}<strong>=</strong>{{ i18n.t('hero.note.c') }}
+    </div>
+  </div>
+</section>

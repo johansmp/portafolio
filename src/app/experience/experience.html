@@ -1,0 +1,45 @@
+<section class="section" id="experiencia">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">{{ i18n.t('experience.kicker') }}</div>
+        <h2>{{ i18n.t('experience.heading') }}</h2>
+      </div>
+    </div>
+    <div class="lower-grid">
+      <div class="timeline">
+        @for (job of jobs(); track job.company) {
+          <article class="job">
+            <h3>{{ job.company }}</h3>
+            <time>{{ job.period }}</time>
+            <div class="job-role">{{ job.role }}</div>
+            <ul>
+              @for (achievement of job.achievements; track achievement) {
+                <li>{{ achievement }}</li>
+              }
+            </ul>
+          </article>
+        }
+      </div>
+      <aside class="ai-panel" id="ia">
+        <h3>{{ i18n.t('ai.title') }}</h3>
+        <p>{{ i18n.t('ai.subtitle') }}</p>
+        <div class="ai-grid">
+          @for (item of aiItems(); track item.title) {
+            <div class="ai-item">
+              <div class="ai-icon">{{ item.icon }}</div>
+              <div>
+                <strong>{{ item.title }}</strong>
+                <span>{{ item.description }}</span>
+              </div>
+            </div>
+          }
+        </div>
+        <div class="quote">
+          ✦　{{ i18n.t('ai.quote') }}<br />
+          <span class="quote-sub">{{ i18n.t('ai.quote.sub') }}</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
